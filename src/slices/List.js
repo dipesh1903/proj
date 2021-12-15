@@ -34,6 +34,19 @@ const listDataSlice = createSlice({
 			let newData = state.listData.filter((item , index) => item.id !== payload);
 			state.listData = newData;
 			localStorage.setItem(LIST_DATA_LOCALSTORAGE_KEY , JSON.stringify(newData));
+		},
+		editListData: (state , {payload}) => {
+			console.log(payload)
+			let newData = state.listData.map((item , index) => {
+
+					if(payload.id === item.id) {
+						return payload
+					} else {
+						return item;
+					}
+				});
+			state.listData = newData;
+			localStorage.setItem(LIST_DATA_LOCALSTORAGE_KEY , JSON.stringify(newData));
 		}
 	},
 	extraReducers(builder) {
@@ -57,6 +70,6 @@ const listDataSlice = createSlice({
 
 })
 
-export const {deleteListData} = listDataSlice.actions;
+export const {deleteListData , editListData} = listDataSlice.actions;
 
 export default listDataSlice.reducer

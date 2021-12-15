@@ -4,27 +4,55 @@
   width: 40%;
   margin: 1em;
 
-}
+  &:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
 
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
+  .container {
+    padding: 2px;
 
-.container {
-  padding: 2px 16px;
-}
+    .names {
+      display:  flex;
+      padding-bottom: 4px;
 
-.delete-button {
+      input {
+        width: 50%;
+      }
+
+      .padding-right {
+        margin-right: 10px;
+      }
+
+    }
+  }
+
+  .buttons {
+
+    display: flex;
+    justify-content: space-between;
+    padding-top:  1em;
+
+
+      .delete-button {
   background-color: #4CAF50; /* Green */
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 15px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 12px;
   cursor: pointer;
 }
+
+  }
+
+
+
+
+}
+
+
 
  /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
@@ -34,7 +62,7 @@
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
   .card {
-    width: 40%;
+    width: 50%;
   }
 }
 

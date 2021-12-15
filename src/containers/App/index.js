@@ -1,8 +1,8 @@
 import React , {useEffect , useState} from 'react';
 import Card from '../../components/Card/index.js';
 import { useSelector, useDispatch } from 'react-redux';
-import {fetchListData , deleteListData} from '../../slices/List.js';
-import './style.css';
+import {fetchListData , deleteListData , editListData} from '../../slices/List.js';
+import './style.scss';
 
 
 const App = (props) => {
@@ -19,13 +19,17 @@ const App = (props) => {
 		dispatch(deleteListData(id));
 	}
 
+	const onEditHandler = (data) => {
+		console.log(data)
+		dispatch(editListData(data));
+	}
 
 	return (
 			<div class="main">
 				{
 					listData && listData.map((item , index) => {
 						return (
-								<Card key={item.id} data = {item} onClick = {onClickHandler}/>
+								<Card key={item.id} data = {item} onEdit={onEditHandler} onClick = {onClickHandler}/>
 							)
 					})
 				}
