@@ -1,0 +1,1 @@
+export const LIST_DATA_API = 'https://reqres.in/api/users?page=1';
